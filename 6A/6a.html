@@ -1,1 +1,34 @@
+<html>
+<head>
+<title>Bakery shop</title>
+<script type="text/javascript">
+function finalprize(){
+	var quantity=document.getElementById('quan').value;
+	if(document.getElementById('r1').checked){
+		var tcost=+quantity * 100;
+		alert('Total cost is : '+ tcost)
+	}
+	else if(document.getElementById('r2').checked){
+		var tcost=+quantity * 50;
+		alert('Total cost is : '+ tcost)
+	}
+	else if(quantity==""){
+		alert("Enter the finite value for the quantity: ");
+	}
 
+}
+</script>
+</head>
+<body>
+<form>
+<input type="radio" id='r1' name="bakery" value="cake"> <img src='cake.jpg'><p>Prize:100</p><br><br><br>
+
+<input type="radio" id='r2' name="bakery" value="muffin"> <img src='muffin.jpg'><p>Prize:50</p><br><br>
+
+Quantity: <input type="number" id="quan">
+			<input type="submit" value="buy" onclick="finalprize()">
+</form>
+
+
+</body>
+</html>
