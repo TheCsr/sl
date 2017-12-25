@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<title>Pizza</title>
+<head>
+	<script type='text/javascript'>
+			function hover(){
+			document.getElementById('image').style.visibility="visible";
+							}
+			function nohover(){
 
+					document.getElementById('image').style.visibility="hidden";
+					}
+
+	</script>
+<style>
+	#pizza{
+
+			width:100px;
+			color:green;
+			
+		}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1  onmouseover="hover()" onmouseout="nohover()"  id='pizza'>Pizza</h1>
+
+
+Add Pizza Variety, here :  
+ <input id="id1" type="text" >
+<button onclick="add2list()">Add</button><br><br>
+
+
+<h2>Varities of Pizza</h2>
+<p1 id="variety"></p1>
+<script>
+var varities = ["Mexican Veggie Pizza"];
+document.getElementById("variety").innerHTML = varities;
+
+function add2list(){
+	var values=document.getElementById("id1").value;
+	if (values==""){
+		alert("Enter a valid data: ");
+	}
+	else{
+	varities.push(values);
+	document.getElementById('variety').innerHTML=varities;
+	}
+}
+</script>
+
+<img id='image' src='pizza.jpg' style="visibility:hidden">
+
+</body>
+</html>
