@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>Marks total calculator</title>
+<head>
+<script type="text/javascript">
+function check(id,grade){
+	var num=document.getElementById(id).value;
+	if (num>=0 && num<=100){
+	document.getElementById(grade).value=checkgrade(num);
+	var marks1=document.getElementById('mark1').value;
+	var marks2=document.getElementById('mark2').value;
+	document.getElementById('total').value=+marks1 + +marks2;
+}else{
+	alert("Enter a valid mark between 0 and 100");
+}
+}
 
+function checkgrade(mark){
+	if ( mark >= 90 && mark <= 100){
+		return "S";
+	}
+	else if ( mark >= 75 && mark < 90){
+		return "A";
+	}
+	else if ( mark >= 65 && mark < 75){
+		return "B";
+	}
+	else if ( mark >= 45 && mark < 65){
+		return "C";
+	}else{
+		return "Fail";
+	}
+	
+}
+
+
+</script>
+
+
+</head>
+<body>
+<p id='printmark'></p>
+Mark1: <input type="number" id='mark1' min='0' max='100' onchange="check('mark1','grade1')"/><input type='text' id='grade1' disabled/><br>
+Mark2: <input type="text" id='mark2' min='0' max='100' onchange="check('mark2','grade2')" /><input type='text' id='grade2' disabled/><br>
+Total: <input type='text' id='total' disabled/>
+
+</body>
+</html>
